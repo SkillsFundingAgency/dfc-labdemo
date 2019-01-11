@@ -12,7 +12,7 @@ namespace dfc.lab.demo.Pages
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            Message = "The proposed solution";
         }
     }
 }
