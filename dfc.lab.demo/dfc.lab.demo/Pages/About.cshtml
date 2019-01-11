@@ -6,4 +6,36 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@Model.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<p>
+    Having different builds and even repos for the various environments only makes maintenance more difficult
+    and over time reduces productivity.
+</p>
+<p>
+    The aim of this demo is to have a single repo and build deploy to 3 different environments:
+    <ul>
+        <li>
+            LAB - a place for proof of concept deployments.
+            Any feature branch commit tagged with lab will be deployed to this.
+            See
+            <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">
+                here
+            </a>
+            for more details about tagging in git.
+            Also any build subsequently tagged with lab in VSTS.
+        </li>
+        <li>
+            DEV - the development environments. Would normally contain testing environments UAT.
+            Any pull request merged to the dev branch will be deployed to this.
+        </li>
+        <li>
+            PROD - production like environments, including staging or pre-production.
+            Any pull request merged to the master branch (usually from the dev branch) will be deployed to this.
+        </li>
+    </ul>
+</p>
+<p>
+    Before running the usual git push command you want to run<br/>
+    <pre>
+        git push --tags --force
+    </pre>
+</p>
