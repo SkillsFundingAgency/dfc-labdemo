@@ -1,7 +1,7 @@
 ﻿@page
 @model TestModel
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Using";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@Model.Message</h3>
@@ -40,4 +40,23 @@
         lab environment (dfc-lab-labdemo-as.azurewebsites.net)
     </a>.
     This can be deployed to by tagging the build with lab.
+</p>
+<p>
+    One way to tag the build is by tagging the commit.
+    Tagging in git is not as smooth as it prehaps could be.
+    First of all, there can only be one lab tag so you must delete the old one first.
+    You can then tag the last commit.<br />
+    <pre>
+        git tag -d lab
+        git tag lab
+    </pre><br />
+    Tags are considered local in git so need to be forced up to the origin.
+    Before running the usual git push command you want to run<br />
+    <pre>
+        git push --tags --force
+    </pre><br />
+    You can then push the commit in the usual way.
+</p>
+<p>
+    An alternative is to tag the build in VSTS after the fact.
 </p>
