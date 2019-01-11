@@ -9,9 +9,7 @@
 <p>
     Having different builds and even repos for the various environments only makes maintenance more difficult
     and over time reduces productivity.
-</p>
-<p>
-    The aim of this demo is to have a single repo and build deploy to 3 different environments:
+    The aim of this demo is to have a single repo and build definition to deploy to 3 different environments:
     <ul>
         <li>
             LAB - a place for proof of concept deployments.
@@ -21,11 +19,11 @@
                 here
             </a>
             for more details about tagging in git.
-            Also any build subsequently tagged with lab in VSTS.
+            Also any build subsequently tagged with lab in VSTS will also deploy to this.
         </li>
         <li>
             DEV - the development environments. Would normally contain testing environments UAT.
-            Any pull request merged to the dev branch will be deployed to this.
+            Any pull request (PR) merged to the dev branch will be deployed to this. Pull requests work the same.
         </li>
         <li>
             PROD - production like environments, including staging or pre-production.
@@ -34,8 +32,12 @@
     </ul>
 </p>
 <p>
-    Before running the usual git push command you want to run<br/>
-    <pre>
-        git push --tags --force
-    </pre>
+    While the number of release definitions remain the same, task groups are used to group together tasks.
+    An environment will typically call a few task groups and a couple of task directly.
+    Most of the maintenance is done in the task group which only needs to be done once and is reflected in all 5 environments.
+</p>
+<p>
+    While outside the scope of this demo product, the Azure resources would also be created by a single nested ARM template.
+    This would use standard building blocks for each resource.
+    The naming convention would also be brought into line with other projects.
 </p>

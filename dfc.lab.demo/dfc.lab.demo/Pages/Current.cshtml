@@ -1,7 +1,7 @@
 ﻿@page
 @model CurrentModel
 @{
-    ViewData["Title"] = "Current";
+    ViewData["Title"] = "Current Solution";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@Model.Message</h3>
@@ -22,13 +22,13 @@
     There are also three different build definitions:
     <ul>
         <li>
-            lab
+            <a href="https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_build?definitionId=618">Lab build</a>
         </li>
         <li>
-            ci
+            <a href="https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_build?definitionId=807">CI build (dev)</a>
         </li>
         <li>
-            master
+            <a href="https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_build?definitionId=799">Master build</a>
         </li>
     </ul>
 </p>
@@ -38,4 +38,8 @@
 </p>
 <p>
     On top of there are three release definitions for five different environments.
+    Each environment has every task duplicated in to it.
+</p>
+<p>
+    Ensuring consistency between all these is time consuming and reduces velocity.
 </p>
