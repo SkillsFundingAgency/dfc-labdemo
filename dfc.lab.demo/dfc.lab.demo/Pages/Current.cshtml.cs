@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace dfc.lab.demo.Pages
 {
-    public class AboutModel : PageModel
+    public class CurrentModel : PageModel
     {
         public string Message { get; set; }
 
         public void OnGet()
         {
-            Message = "The proposed solution";
+            Message = "The current setup";
         }
     }
 }

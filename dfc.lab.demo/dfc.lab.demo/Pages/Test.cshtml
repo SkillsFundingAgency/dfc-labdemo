@@ -1,0 +1,62 @@
+﻿@page
+@model TestModel
+@{
+    ViewData["Title"] = "Using";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<p>
+    This is a fully working example.
+    To begin testing simply clone the
+    <a href="https://github.com/SkillsFundingAgency/dfc-labdemo">
+        dfc-labdemo
+    </a>
+    repo to your machine.
+</p>
+<p>
+    The CI/CD pipeline has been build around the Gitflow workflow.
+    This has two named branches, master and dev, which require pull requests to merge to.
+    A pull request requires at least one reviewer to approve and a successful build.
+    Once completed the merge will deploy to
+    <ul>
+        <li>
+            dev:
+            <a href="https://dfc-dev-labdemo-as.azurewebsites.net/">
+                dfc-dev-labdemo-as.azurewebsites.net
+            </a>
+        </li>
+        <li>
+            master:
+            <a href="https://dfc-prd-labdemo-as.azurewebsites.net/">
+                dfc-prd-labdemo-as.azurewebsites.net
+            </a>
+        </li>
+    </ul>
+</p>
+<p>
+    On top of this there is also a
+    <a href="https://dfc-lab-labdemo-as.azurewebsites.net/">
+        lab environment (dfc-lab-labdemo-as.azurewebsites.net)
+    </a>.
+    This can be deployed to by tagging the build with lab.
+</p>
+<p>
+    One way to tag the build is by tagging the commit.
+    Tagging in git is not as smooth as it prehaps could be.
+    First of all, there can only be one lab tag so you must delete the old one first.
+    You can then tag the last commit.<br />
+    <pre>
+        git tag -d lab
+        git tag lab
+    </pre><br />
+    Tags are considered local in git so need to be forced up to the origin.
+    Before running the usual git push command you want to run<br />
+    <pre>
+        git push --tags --force
+    </pre><br />
+    You can then push the commit in the usual way.
+</p>
+<p>
+    An alternative is to tag the build in VSTS after the fact.
+</p>

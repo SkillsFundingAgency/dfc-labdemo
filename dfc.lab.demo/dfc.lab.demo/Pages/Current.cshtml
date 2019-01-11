@@ -1,0 +1,41 @@
+﻿@page
+@model CurrentModel
+@{
+    ViewData["Title"] = "Current";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<p>
+    At the moment there are two repos,
+    <a href="https://github.com/SkillsFundingAgency/dfc-digital">
+        dfc-digital
+    </a>
+    and the private repo
+    <a href="https://github.com/SkillsFundingAgency/dfc-digital-lab">
+        dfc-digital-lab
+    </a>.
+    This instantly means any Sitefinity updates need to be maintained in two different places
+    and code developed in the lab has to be manually copied into the main repo.
+</p>
+<p>
+    There are also three different build definitions:
+    <ul>
+        <li>
+            lab
+        </li>
+        <li>
+            ci
+        </li>
+        <li>
+            master
+        </li>
+    </ul>
+</p>
+<p>
+    Having three different build definitions make maintenance harder
+    and can lead to sutle differences between the builds.
+</p>
+<p>
+    On top of there are three release definitions for five different environments.
+</p>
