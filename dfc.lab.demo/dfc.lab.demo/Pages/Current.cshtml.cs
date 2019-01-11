@@ -12,7 +12,7 @@ namespace dfc.lab.demo.Pages
 
         public void OnGet()
         {
-            Message = "The current setup";
+            Message = "How the CI/CD pipeline is set up currently";
         }
     }
 }

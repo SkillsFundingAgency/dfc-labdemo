@@ -12,7 +12,7 @@ namespace dfc.lab.demo.Pages
 
         public void OnGet()
         {
-            Message = "How to test";
+            Message = "How to test the proposed solution";
         }
     }
 }
